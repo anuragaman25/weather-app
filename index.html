@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" />
+  <title>Weather App</title>
+</head>
+<body>
+  <header>
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button> <!-- Add icon for visual cue -->
+  </header>
+  
+  <main>
+    <section id="weather-wrapper">
+      <h1>Weather App</h1>
+      <div id="weather-search">
+        <!-- Wrap input and submit inside a form for better semantics -->
+        <form id="search-form" onsubmit="fetchWeather(); return false;">
+          <input 
+            id="search" 
+            type="text" 
+            placeholder="Search by city" 
+            aria-label="Search for a city" 
+            required />
+          <input 
+            id="submit" 
+            type="submit" 
+            value="Search" 
+            aria-label="Submit search" />
+        </form>
+      </div>
+
+      <div id="loading-message" style="display: none;">Loading...</div> <!-- Loading indicator -->
+      <div id="weather-data" style="display: none;"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
